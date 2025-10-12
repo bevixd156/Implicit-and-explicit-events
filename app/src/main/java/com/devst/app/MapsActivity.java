@@ -32,11 +32,13 @@ public class MapsActivity extends AppCompatActivity {
                 // Intent para abrir maps en la ubicación indicada
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmIntentUri);
                 // Intent para buscar si existe una aplicación que maneje este Intent
-                if (mapIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(mapIntent);
-                } else {
-                    // Si no se encuentra la aplicación de Google Maps
-                    Toast.makeText(this, "No se encontró la Aplicación de Google Maps 😓😓😓", Toast.LENGTH_SHORT).show();
+                // Abrir con cualquier app disponible de mapas
+                Intent chooser = Intent.createChooser(mapIntent, "Abrir con");
+
+                try {
+                    startActivity(chooser);
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(this, "No se encontró ninguna aplicación de mapas 😓", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 // Si no se Ingresó una dirección o lugar
