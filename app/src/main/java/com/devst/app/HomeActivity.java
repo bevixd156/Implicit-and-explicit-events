@@ -8,6 +8,7 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +27,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Calendar;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -125,6 +128,29 @@ public class HomeActivity extends AppCompatActivity {
         btnConfigWifi.setOnClickListener(v ->{
             Intent wifi = new Intent(Settings.ACTION_WIFI_SETTINGS);
             startActivity(wifi);
+        });
+
+
+
+        btnEventoCalendario.setOnClickListener(v -> {
+            // Creamos la hora y fecha del eventinho
+            Calendar beginTime = Calendar.getInstance();
+            beginTime.set(2025, Calendar.OCTOBER, 15, 10, 0); // Año, mes (0-based), día, hora, minuto
+            Calendar endTime = Calendar.getInstance();
+            endTime.set(2025, Calendar.OCTOBER, 15, 11, 0);
+
+            // Creacion del Intent Implicido
+            Intent evento = new Intent(Intent.ACTION_INSERT)
+                    .setData(CalendarContract.Events.CONTENT_URI)
+                    .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                    .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                    .putExtra(CalendarContract.Events.TITLE, "Revisión del camión")
+                    .putExtra(CalendarContract.Events.DESCRIPTION, "Chequeo técnico programado del vehículo")
+                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "Taller Central Hirata")
+                    .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
+
+            // Iniciar actividad
+            startActivity(evento);
         });
 
 
