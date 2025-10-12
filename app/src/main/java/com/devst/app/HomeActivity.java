@@ -130,7 +130,10 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
-
+        btnMarcadorTelefonico.setOnClickListener(v -> {
+            Intent dial = new Intent(Intent.ACTION_DIAL);
+            startActivity(dial);
+        });
 
         btnEventoCalendario.setOnClickListener(v -> {
             // Creamos la hora y fecha del eventinho
