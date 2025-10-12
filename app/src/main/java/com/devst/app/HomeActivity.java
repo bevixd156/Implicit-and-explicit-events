@@ -77,7 +77,6 @@ public class HomeActivity extends AppCompatActivity {
         Button btnAbrirWeb = findViewById(R.id.btnAbrirWeb);
         Button btnEnviarCorreo = findViewById(R.id.btnEnviarCorreo);
         Button btnCompartir = findViewById(R.id.btnCompartir);
-        Button btnIrMaps = findViewById(R.id.btnIrMaps);
         btnLinterna = findViewById(R.id.btnLinterna);
         Button btnCamara = findViewById(R.id.btnCamara);
         Button btnConfigWifi = findViewById(R.id.btnConfigWifi);
@@ -125,6 +124,9 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
+
+
+
         //Linterna Inicializamos la camara
 
         camara = (CameraManager) getSystemService(CAMERA_SERVICE);
@@ -165,10 +167,6 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, CamaraActivity.class))
         );
 
-        //Evento: Intent explicito
-        btnIrMaps.setOnClickListener(v ->
-                startActivity(new Intent(this, MapsActivity.class))
-        );
     }
 
     //Linterna
