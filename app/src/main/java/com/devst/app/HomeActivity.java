@@ -130,6 +130,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
+        //Evento: Intent implicito
         btnMarcadorTelefonico.setOnClickListener(v -> {
             Intent dial = new Intent(Intent.ACTION_DIAL);
             startActivity(dial);
@@ -138,7 +139,7 @@ public class HomeActivity extends AppCompatActivity {
         btnEventoCalendario.setOnClickListener(v -> {
             // Creamos la hora y fecha del eventinho
             Calendar beginTime = Calendar.getInstance();
-            beginTime.set(2025, Calendar.OCTOBER, 15, 10, 0); // Año, mes (0-based), día, hora, minuto
+            beginTime.set(2025, Calendar.OCTOBER, 15, 10, 0);
             Calendar endTime = Calendar.getInstance();
             endTime.set(2025, Calendar.OCTOBER, 15, 11, 0);
 
