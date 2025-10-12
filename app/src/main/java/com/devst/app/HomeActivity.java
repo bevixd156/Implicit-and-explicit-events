@@ -78,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btnCompartir = findViewById(R.id.btnCompartir);
         btnLinterna = findViewById(R.id.btnLinterna);
         Button btnCamara = findViewById(R.id.btnCamara);
+        Button btnConfigWifi = findViewById(R.id.btnConfigWifi);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
