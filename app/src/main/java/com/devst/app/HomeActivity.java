@@ -8,6 +8,7 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +27,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Calendar;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -80,6 +83,8 @@ public class HomeActivity extends AppCompatActivity {
         btnLinterna = findViewById(R.id.btnLinterna);
         Button btnCamara = findViewById(R.id.btnCamara);
         Button btnConfigWifi = findViewById(R.id.btnConfigWifi);
+        Button btnMarcadorTelefonico = findViewById(R.id.btnMarcadorTelefonico);
+        Button btnEventoCalendario = findViewById(R.id.btnEventoCalendario);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -124,7 +129,31 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
+        //Evento: Intent implicito
+        btnMarcadorTelefonico.setOnClickListener(v ->{
+            Intent llamada = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:977398523"));
+            startActivity(llamada);
+        });
 
+        btnEventoCalendario.setOnClickListener(v ->{
+            Calendar beginTime = Calendar.getInstance();
+            beginTime.set(2025, Calendar.OCTOBER, 15, 10, 0);
+            Calendar endTime = Calendar.getInstance();
+            endTime.set(2025, Calendar.OCTOBER, 15, 10, 15);
+
+            //creacion del Intent implicito
+            Intent evento = new Intent(Intent.ACTION_INSERT)
+                    .setData(CalendarContract.Events.CONTENT_URI)
+                    .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                    .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                    .putExtra(CalendarContract.Events.TITLE, "A esta hora deberia estar en clase :P")
+                    .putExtra(CalendarContract.Events.DESCRIPTION, "No se que escribir aca, lo unico que se es que no se nada :(")
+                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "Lugar donde estoy estudiando :D")
+                    .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
+
+            //Iniciar actividad :D
+            startActivity(evento);
+        });
 
 
         //Linterna Inicializamos la camara
