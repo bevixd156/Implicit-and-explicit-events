@@ -80,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         btnLinterna = findViewById(R.id.btnLinterna);
         Button btnCamara = findViewById(R.id.btnCamara);
         Button btnConfigWifi = findViewById(R.id.btnConfigWifi);
+        Button btnMarcadorTelefonico = findViewById(R.id.btnMarcadorTelefonico);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -124,7 +125,11 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
-
+        //Evento: Intent implicito
+        btnMarcadorTelefonico.setOnClickListener(v ->{
+            Intent llamada = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:977398523"));
+            startActivity(llamada);
+        });
 
 
         //Linterna Inicializamos la camara

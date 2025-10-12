@@ -114,6 +114,13 @@
                     android:text="Ingresar Datos Google Maps"
                     android:layout_marginTop="12dp"/>
 
+                <Button
+                    android:id="@+id/btnMarcadorTelefonico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Abrir Marcador telefonico"
+                    android:layout_marginTop="12dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
