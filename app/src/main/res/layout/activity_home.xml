@@ -121,6 +121,13 @@
                     android:text="Abrir Marcador telefonico"
                     android:layout_marginTop="12dp"/>
 
+                <Button
+                    android:id="@+id/btnEventoCalendario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar evento a calendario"
+                    android:layout_marginTop="12dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
