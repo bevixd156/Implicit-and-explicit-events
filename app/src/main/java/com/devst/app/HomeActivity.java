@@ -13,6 +13,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,6 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btnIrMaps = findViewById(R.id.btnIrMaps);
         Button btnMarcadorTelefonico = findViewById(R.id.btnMarcadorTelefonico);
         Button btnEventoCalendario = findViewById(R.id.btnEventoCalendario);
+        Button btnImagenGaleria = findViewById(R.id.btnimagenGaleria);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -125,12 +127,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //Evento: Intent implicito
-        btnConfigWifi.setOnClickListener(v ->{
+        btnConfigWifi.setOnClickListener(v -> {
             Intent wifi = new Intent(Settings.ACTION_WIFI_SETTINGS);
             startActivity(wifi);
         });
 
-        btnIrMaps.setOnClickListener(v->{
+        //Evento: Intent implicito
+        btnIrMaps.setOnClickListener(v -> {
             startActivity(new Intent(this, MapsActivity.class));
         });
 
@@ -140,6 +143,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(dial);
         });
 
+        //Evento: Intent implicito
         btnEventoCalendario.setOnClickListener(v -> {
             // Creamos la hora y fecha del eventinho
             Calendar beginTime = Calendar.getInstance();
@@ -161,11 +165,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(evento);
         });
 
-
-
+        // Evento: Intent implicito
+        btnImagenGaleria.setOnClickListener(v ->{
+            startActivity(new Intent(this, GaleriaActivity.class));
+        });
 
         //Linterna Inicializamos la camara
-
         camara = (CameraManager) getSystemService(CAMERA_SERVICE);
 
         try {
@@ -217,7 +222,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -226,19 +230,10 @@ public class HomeActivity extends AppCompatActivity {
                 camara.setTorchMode(camaraID, false);
                 luz = false;
                 if (btnLinterna != null) btnLinterna.setText("Encender Linterna");
-            } catch (CameraAccessException ignored) {}
+            } catch (CameraAccessException ignored) {
+            }
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
     // ===== Menú en HomeActivity =====
