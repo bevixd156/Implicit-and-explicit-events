@@ -8,6 +8,7 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -116,6 +117,14 @@ public class HomeActivity extends AppCompatActivity {
             share.putExtra(Intent.EXTRA_TEXT, "Hola desde mi app Android 😎");
             startActivity(Intent.createChooser(share, "Compartir usando:"));
         });
+
+        //Evento: Intent implicito
+        btnConfigWifi.setOnClickListener(v ->{
+            Intent wifi = new Intent(Settings.ACTION_WIFI_SETTINGS);
+            startActivity(wifi);
+        });
+
+
 
 
         //Linterna Inicializamos la camara
