@@ -17,28 +17,32 @@ public class MapsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_maps);
 
-        EditText edtD = findViewById(R.id.edtDireccion);
+        //Referenciamos los elementos de activity_maps por su ID
+        EditText edtDireccion = findViewById(R.id.edtDireccion);
         Button btnBuscar = findViewById(R.id.btnBuscar);
 
-        // Definimos las funciones del boton Buscar
+        // Definimos la acción del botón Buscar
         btnBuscar.setOnClickListener(v -> {
             // Definimos un String para el lugar que el usuario ingresará
-            String lugar = edtD.getText().toString();
-            // Si el lugar se encuentra lo que retornará
-            // Será la aplicacion con el lugar ingresado
+            String lugar = edtDireccion.getText().toString();
+            // Verificamos que el lugar no esté vacío
             if (!lugar.isEmpty()) {
-                Uri gmIntentUri = Uri.parse("geo:0,0?=" + Uri.encode(lugar));
-                // Intent para ingresar el lugar que el usuario busca
+                // Buscar dirección o lugar en maps
+                Uri gmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(lugar));
+                // Intent para abrir maps en la ubicación indicada
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmIntentUri);
+                // Especificamos que queremos ocupar Google Maps
                 mapIntent.setPackage("com.google.android.apps.maps");
-                // Si el
+                // Intent para buscar si existe una aplicación que maneje este Intent
                 if (mapIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(mapIntent);
                 } else {
-                    Toast.makeText(this, "No se encontró la Aplicación de Google Mpas", Toast.LENGTH_SHORT).show();
+                    // Si no se encuentra la aplicación de Google Maps
+                    Toast.makeText(this, "No se encontró la Aplicación de Google Maps 😓😓😓", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(this, "Ingresa una Dirección o Lugar", Toast.LENGTH_SHORT).show();
+                // Si no se Ingresó una dirección o lugar
+                Toast.makeText(this, "Ingresa una Dirección o Lugar 🙄🙄🙄", Toast.LENGTH_SHORT).show();
             }
         });
     }
