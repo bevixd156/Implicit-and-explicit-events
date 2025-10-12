@@ -100,6 +100,13 @@
                     android:text="Abrir Cámara"
                     android:layout_marginTop="12dp"/>
 
+                <Button
+                    android:id="@+id/btnConfigWifi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Abrir Ajustes Wi-Fi"
+                    android:layout_marginTop="12dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
