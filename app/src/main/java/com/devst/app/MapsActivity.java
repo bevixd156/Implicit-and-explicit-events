@@ -31,8 +31,6 @@ public class MapsActivity extends AppCompatActivity {
                 Uri gmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(lugar));
                 // Intent para abrir maps en la ubicación indicada
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmIntentUri);
-                // Especificamos que queremos ocupar Google Maps
-                mapIntent.setPackage("com.google.android.apps.maps");
                 // Intent para buscar si existe una aplicación que maneje este Intent
                 if (mapIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(mapIntent);
