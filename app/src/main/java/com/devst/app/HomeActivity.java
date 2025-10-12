@@ -80,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         btnLinterna = findViewById(R.id.btnLinterna);
         Button btnCamara = findViewById(R.id.btnCamara);
         Button btnConfigWifi = findViewById(R.id.btnConfigWifi);
+        Button btnIrMaps = findViewById(R.id.btnIrMaps);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -124,7 +125,9 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
-
+        btnIrMaps.setOnClickListener(v ->{
+            startActivity(new Intent(this, MapsActivity.class));
+        });
 
 
         //Linterna Inicializamos la camara
