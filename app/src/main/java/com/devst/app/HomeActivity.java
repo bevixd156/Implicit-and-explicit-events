@@ -125,6 +125,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
+        //Evento Intent explicito
         btnIrMaps.setOnClickListener(v ->{
             startActivity(new Intent(this, MapsActivity.class));
         });
