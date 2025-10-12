@@ -18,7 +18,7 @@
         android:theme="@style/Theme.App">
         <activity
             android:name=".MapsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".CamaraActivity"
             android:exported="false" />
