@@ -130,6 +130,10 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(wifi);
         });
 
+        btnIrMaps.setOnClickListener(v->{
+            startActivity(new Intent(this, MapsActivity.class));
+        });
+
         //Evento: Intent implicito
         btnMarcadorTelefonico.setOnClickListener(v -> {
             Intent dial = new Intent(Intent.ACTION_DIAL);
