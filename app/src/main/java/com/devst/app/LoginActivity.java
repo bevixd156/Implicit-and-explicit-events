@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.util.Patterns;
 
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Creamos variables
     private EditText edtEmail, edtPass;
+    private ImageView ivConfig = findViewById(R.id.ivConfig);
     private Button btnLogin;
 
     @Override
@@ -26,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-
 
         edtEmail = findViewById(R.id.edtEmail);
         edtPass  = findViewById(R.id.edtPass);
@@ -37,6 +38,12 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Función pendiente: recuperar contraseña", Toast.LENGTH_SHORT).show());
         findViewById(R.id.tvCrear).setOnClickListener(v ->
                 Toast.makeText(this, "Función pendiente: crear cuenta", Toast.LENGTH_SHORT).show());
+
+        // Evento explicito
+        ivConfig.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ConfigActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void intentoInicioSesion() {
