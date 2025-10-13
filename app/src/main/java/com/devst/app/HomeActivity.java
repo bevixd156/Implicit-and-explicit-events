@@ -134,24 +134,24 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(share, "Compartir usando:"));
         });
 
-        //Evento: Intent implicito
+        //Evento: Intent implicito -> Redirigir a las configuraciones del wifi del telefono movil
         btnConfigWifi.setOnClickListener(v -> {
             Intent wifi = new Intent(Settings.ACTION_WIFI_SETTINGS);
             startActivity(wifi);
         });
 
-        //Evento: Intent implicito
+        //Evento: Intent implicito -> redirige a la Vista de Maps
         btnIrMaps.setOnClickListener(v -> {
             startActivity(new Intent(this, MapsActivity.class));
         });
 
-        //Evento: Intent implicito
+        //Evento: Intent implicito -> te redirecciona al teclado numero para realizar llamadas
         btnMarcadorTelefonico.setOnClickListener(v -> {
             Intent dial = new Intent(Intent.ACTION_DIAL);
             startActivity(dial);
         });
 
-        //Evento: Intent implicito
+        //Evento: Intent implicito -> agrega un evento en el calendario :)
         btnEventoCalendario.setOnClickListener(v -> {
             // Creamos la hora y fecha del eventinho
             Calendar beginTime = Calendar.getInstance();
@@ -164,9 +164,9 @@ public class HomeActivity extends AppCompatActivity {
                     .setData(CalendarContract.Events.CONTENT_URI)
                     .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
                     .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-                    .putExtra(CalendarContract.Events.TITLE, "Revisión del camión")
-                    .putExtra(CalendarContract.Events.DESCRIPTION, "Chequeo técnico programado del vehículo")
-                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "Taller Central Hirata")
+                    .putExtra(CalendarContract.Events.TITLE, "Clase")
+                    .putExtra(CalendarContract.Events.DESCRIPTION, "Tengo claseeee aaahhhh :)")
+                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "En el lugar donde estudio :D")
                     .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
 
             // Iniciar actividad
