@@ -88,6 +88,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btnMarcadorTelefonico = findViewById(R.id.btnMarcadorTelefonico);
         Button btnEventoCalendario = findViewById(R.id.btnEventoCalendario);
         Button btnImagenGaleria = findViewById(R.id.btnimagenGaleria);
+        Button btnAbrirGitHub = findViewById(R.id.btnAbrirGitHub);
 
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -103,7 +104,14 @@ public class HomeActivity extends AppCompatActivity {
 
         // Evento: Intent implícito → abrir web
         btnAbrirWeb.setOnClickListener(v -> {
-            Uri uri = Uri.parse("https://www.santotomas.cl");
+            Uri uri = Uri.parse("https://www.santotomas.com");
+            Intent viewWeb = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(viewWeb);
+        });
+
+        // Evento: Intent implícito → abrir web
+        btnAbrirGitHub.setOnClickListener(v -> {
+            Uri uri = Uri.parse("https://www.github.com");
             Intent viewWeb = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(viewWeb);
         });
