@@ -18,7 +18,9 @@
         android:theme="@style/Theme.App">
         <activity
             android:name=".GaleriaActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".MapsActivity"
             android:exported="true" />
