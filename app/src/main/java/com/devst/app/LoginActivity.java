@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.tvCrear).setOnClickListener(v ->
                 Toast.makeText(this, "Función pendiente: crear cuenta", Toast.LENGTH_SHORT).show());
 
-        // Evento explicito
+        // Evento Intent explicito -> Redirige desde la vista LoginActivity.class a la vista de ConfigActivity.class
         ivConfig.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, ConfigActivity.class);
             startActivity(intent);
