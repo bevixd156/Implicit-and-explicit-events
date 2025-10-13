@@ -70,7 +70,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Abrir sitio web"/>
+                    android:text="Abrir sitio web Santo Tomas"/>
+
+                <Button
+                    android:id="@+id/btnAbrirGitHub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Abrir sitio web Git Hub"/>
 
                 <Button
                     android:id="@+id/btnEnviarCorreo"
