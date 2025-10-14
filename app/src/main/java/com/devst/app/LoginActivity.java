@@ -1,8 +1,10 @@
 package com.devst.app;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -12,9 +14,7 @@ import android.util.Patterns;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail, edtPass;
     private ImageView ivConfig;
     private Button btnLogin;
+    private View overlayView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +73,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Simulación de login
         boolean ok = email.equals("estudiante@st.cl") && pass.equals("123456");
+
         if (ok) {
             Toast.makeText(this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
-
             // Ir al nuevo Activity
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 
@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("email_usuario", email);
             startActivity(intent);
 
-            // Cerrar la pantalla de login para que no vuelva atrás con "Back"
             finish();
         } else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();

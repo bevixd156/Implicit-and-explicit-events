@@ -108,12 +108,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_20"
-            android:background="@drawable/bg_button_primary"
+            android:backgroundTint="#A566FF"
             android:text="@string/btn_login"
             android:textColor="@color/on_primary"
             android:textStyle="bold"
             android:paddingTop="14dp"
-            android:paddingBottom="14dp"/>
+            android:paddingBottom="14dp"
+            android:transitionName="btnLoginTransition" />
 
         <TextView
             android:id="@+id/tvRecuperarpass"
@@ -146,5 +147,4 @@
                 android:textColor="@color/brand_primary"/>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
