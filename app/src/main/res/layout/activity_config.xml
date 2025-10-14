@@ -8,7 +8,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <!-- Toolbar superior -->
         <androidx.appcompat.widget.Toolbar
@@ -25,6 +26,14 @@
             android:text="Configuraciones de la aplicación"
             android:layout_margin="20dp"
             android:textSize="18sp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchTema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modo oscuro"
+            android:checked="false"
+            android:layout_marginTop="20dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

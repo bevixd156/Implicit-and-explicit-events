@@ -1,10 +1,14 @@
 package com.devst.app;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class ConfigActivity extends AppCompatActivity {
 
@@ -26,6 +30,29 @@ public class ConfigActivity extends AppCompatActivity {
             //Color blanco para el botón superior
             toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white));
         }
+        // Función para el cambio de tema
+        SwitchMaterial switchTema = findViewById(R.id.switchTema);
+
+        // Leer preferencia guardada
+        SharedPreferences prefs = getSharedPreferences("config", MODE_PRIVATE);
+        boolean modoOscuro = prefs.getBoolean("modo_oscuro", false);
+        switchTema.setChecked(modoOscuro);
+
+        // Aplicar tema
+        AppCompatDelegate.setDefaultNightMode(
+                modoOscuro ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
+        );
+
+        switchTema.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Guardar elección
+            prefs.edit().putBoolean("modo_oscuro", isChecked).apply();
+
+            // Aplicar modo
+            AppCompatDelegate.setDefaultNightMode(
+                    isChecked ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
+            );
+        });
+
     }
 
     //Acción botón "Atrás"
