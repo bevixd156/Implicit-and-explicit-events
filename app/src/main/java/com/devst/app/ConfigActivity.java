@@ -22,6 +22,9 @@ public class ConfigActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Ajustes");
+
+            //Color blanco para el botón superior
+            toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white));
         }
     }
 

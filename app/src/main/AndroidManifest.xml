@@ -18,7 +18,7 @@
         android:theme="@style/Theme.App">
         <activity
             android:name=".ConfigActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".GaleriaActivity"
             android:exported="true"
