@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Creamos variables
     private EditText edtEmail, edtPass;
-    private ImageView ivConfig = findViewById(R.id.ivConfig);
+    private ImageView ivConfig;
     private Button btnLogin;
 
     @Override
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPass  = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
+        ivConfig = findViewById(R.id.ivConfig);
 
         btnLogin.setOnClickListener(v -> intentoInicioSesion());
         findViewById(R.id.tvRecuperarpass).setOnClickListener(v ->
