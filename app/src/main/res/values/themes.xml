@@ -3,6 +3,17 @@
     <style name="Base.Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Base application theme. -->
+        <!-- Colores principales -->
+        <item name="colorPrimary">@color/brand_primary1</item>
+        <item name="colorOnPrimary">@color/on_primary1</item>
+
+        <!-- Color de texto principal -->
+        <item name="android:textColor">@color/text_main1</item>
+
+        <!-- Color de fondo de ventana -->
+        <item name="android:windowBackground">@color/background_main</item>
+
     </style>
 
     <style name="Theme.App" parent="Base.Theme.App" />

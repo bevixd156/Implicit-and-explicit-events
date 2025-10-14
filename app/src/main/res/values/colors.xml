@@ -3,6 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <!-- Colores para modo CLARO -->
+    <color name="text_main1">#000000</color> <!-- texto negro -->
+    <color name="brand_primary1">#6200EE</color> <!-- morado principal -->
+    <color name="on_primary1">#FFFFFF</color> <!-- texto sobre color primario -->
+    <color name="background_main1">#FFFFFF</color> <!-- fondo blanco -->
+
     <color name="app_bg">#F5F7FB</color>
     <color name="brand_primary">#5B86E5</color>
     <color name="brand_primary_dark">#3B5BB5</color>
