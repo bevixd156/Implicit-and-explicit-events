@@ -6,7 +6,7 @@
         <!-- Colores modo oscuro para la letras -->
         <item name="colorPrimary">@color/brand_primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
-        <item name="android:colorBackground">@color/background_main</item>
+        <item name="android:colorBackground">@color/background_main1</item>
     </style>
 
     <style name="Theme.App" parent="Base.Theme.App" />
