@@ -79,23 +79,23 @@ public class LoginActivity extends AppCompatActivity {
         boolean ok = email.equals("estudiante@st.cl") && pass.equals("123456");
 
         if (ok) {
-            // 💠 Creamos la pantalla azul que cubrirá todo
+            // Creacion de la pantalla negra de la transicion
             View overlay = getLayoutInflater().inflate(R.layout.activity_transicion, null);
             addContentView(overlay, new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
 
-            // Animación fade-in
+            // Animación Tipo Fade
             overlay.animate()
                     .alpha(1f)
                     .setDuration(400)
                     .withEndAction(() -> {
-                        // Cambiamos de pantalla
+                        //Cambiamos la ventana
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         intent.putExtra("email_usuario", email);
                         startActivity(intent);
 
-                        // Transición fade-out
+                        // Transición de la animacion tipo Fade
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                         finish();
