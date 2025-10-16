@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                         //Cambiamos la ventana
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         intent.putExtra("email_usuario", email);
+                        intent.putExtra("pass_usuario", pass);
                         startActivity(intent);
 
                         // Transición de la animacion tipo Fade

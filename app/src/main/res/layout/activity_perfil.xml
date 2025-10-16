@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_back"
     tools:context=".PerfilActivity">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:background="@drawable/bg_back"
         android:paddingTop="80dp">
 
         <!-- Imagen de perfil redonda -->
@@ -22,17 +23,50 @@
             android:background="@drawable/bg_circle"
             android:elevation="4dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/settings"
             app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <LinearLayout
+            android:layout_width="278dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_card"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <!-- Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Nombre:"
+                android:textColor="@color/text_main1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
+
+            <!-- Ingresar Nombre -->
+            <EditText
+                android:id="@+id/edtNombre"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint=""
+                android:inputType="text"
+                android:textColor="@color/text_main1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <!-- Correo -->
         <TextView
             android:id="@+id/tvCorreo"
             android:layout_width="278dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/bg_card"
             android:text="Correo:"
-            android:textColor="@color/black"
+            android:textColor="@color/text_main1"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -40,22 +74,24 @@
         <TextView
             android:id="@+id/tvPassword"
             android:layout_width="278dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/bg_card"
             android:text="Contraseña:"
-            android:textColor="@color/black"
+            android:textColor="@color/text_main1"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Botón Acerca de -->
+        <!-- Botón guardar cambios -->
         <Button
-            android:id="@+id/btnAcerca"
-            android:layout_width="205dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="24dp"
-            android:text="Acerca de"
-            android:textSize="18sp" />
+            android:id="@+id/btnGuardarCambios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Guardar Cambios"
+            android:textSize="16sp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp" />
 
     </LinearLayout>
 

@@ -36,7 +36,7 @@ import java.util.Calendar;
 public class HomeActivity extends AppCompatActivity {
 
     // Variables
-    private String emailUsuario = "";
+    private String emailUsuario = "", passUsuario = "";
     private TextView tvBienvenida;
 
     //VARIABLES PARA LA CAMARA
@@ -44,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
     private CameraManager camara;
     private String camaraID = null;
     private boolean luz = false;
+
+
 
     // Activity Result (para recibir datos de PerfilActivity)
     private final ActivityResultLauncher<Intent> editarPerfilLauncher =
@@ -61,7 +63,6 @@ public class HomeActivity extends AppCompatActivity {
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
                 if (granted) {
                     alternarluz(); // si conceden permiso, intentamos prender/apagar
-
                 } else {
                     Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
                 }
@@ -72,10 +73,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
-
-        View decor = getWindow().getDecorView();
-        decor.setAlpha(0f);
-        decor.animate().alpha(1f).setDuration(400).start();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -98,12 +95,15 @@ public class HomeActivity extends AppCompatActivity {
         // Recibir dato del Login
         emailUsuario = getIntent().getStringExtra("email_usuario");
         if (emailUsuario == null) emailUsuario = "";
+        passUsuario = getIntent().getStringExtra("pass_usuario");
+        if (passUsuario == null) passUsuario = "";
         tvBienvenida.setText("Bienvenido: " + emailUsuario);
 
         // Evento: Intent explícito → ProfileActivity (esperando resultado)
         btnIrPerfil.setOnClickListener(v -> {
             Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
             i.putExtra("email_usuario", emailUsuario);
+            i.putExtra("pass_usuario", passUsuario);
             editarPerfilLauncher.launch(i);
         });
 
@@ -164,7 +164,7 @@ public class HomeActivity extends AppCompatActivity {
             Calendar endTime = Calendar.getInstance();
             endTime.set(2025, Calendar.OCTOBER, 15, 11, 0);
 
-            // Creacion del Intent Implicido
+            // Creacion del Intent Implicito
             Intent evento = new Intent(Intent.ACTION_INSERT)
                     .setData(CalendarContract.Events.CONTENT_URI)
                     .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
@@ -263,6 +263,7 @@ public class HomeActivity extends AppCompatActivity {
             // Ir al perfil (explícito)
             Intent i = new Intent(this, PerfilActivity.class);
             i.putExtra("email_usuario", emailUsuario);
+            i.putExtra("pass_usuario", passUsuario);
             editarPerfilLauncher.launch(i);
             return true;
         } else if (id == R.id.action_web) {
