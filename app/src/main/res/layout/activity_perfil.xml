@@ -6,5 +6,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PerfilActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_back"
+        android:paddingTop="80dp">
+
+        <!-- Imagen de perfil redonda -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="163dp"
+            android:layout_height="163dp"
+            android:background="@drawable/bg_circle"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <!-- Correo -->
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_card"
+            android:text="Correo:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Contraseña -->
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_card"
+            android:text="Contraseña:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Botón Acerca de -->
+        <Button
+            android:id="@+id/btnAcerca"
+            android:layout_width="205dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="24dp"
+            android:text="Acerca de"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
