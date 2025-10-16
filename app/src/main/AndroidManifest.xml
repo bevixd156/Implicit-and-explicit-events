@@ -38,9 +38,11 @@
         <activity
             android:name=".PerfilActivity"
             android:exported="false" />
+        <!-- Declaramos la actividad de HomeActivity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+        <!-- Declaramos la actividad de LoginActivity -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
