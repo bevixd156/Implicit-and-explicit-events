@@ -37,8 +37,26 @@ Intents Explicitos =
 5. Mostrar la imagen seleccionada dentro de una ventana.
 <img width="108" height="248" alt="image" src="https://github.com/user-attachments/assets/c4eeaac7-fd61-481b-ace0-e16d1dab30bb" />
 
-Dirección de donde esta la APK: C:\Users\Tu_Usuario\AndroidStudioProjects\app2\app\build\outputs\apk\debug
+
+Instrucciones de como compilar el APK:
+
+Vas al apartado de las 4 rallas:
+
+<img width="324" height="177" alt="Captura de pantalla 2025-10-16 200232" src="https://github.com/user-attachments/assets/880caf07-8ac6-40be-b052-759cfb88b83c" />
+
+Apretamos "Build" luego a "Generate App Bundles or APKs" y finalmente apretamos "Generate APKs":
+
+<img width="661" height="373" alt="Captura de pantalla 2025-10-16 200246" src="https://github.com/user-attachments/assets/a4f0de78-f08d-4f62-8566-91953ed26b07" />
+
+Al finalizar el proceso de creación nos saltará una ventanita donde nos dirá donde está el APK nuestro, solo apretamos "locate" y nos dirigirá a la carpeta donde se aloja el APK:
+
+<img width="437" height="113" alt="Captura de pantalla 2025-10-16 200320" src="https://github.com/user-attachments/assets/6446034b-ca19-417a-870f-7c7869031a30" />
+
+Y listo tendríamos nuestra APK lista para instalarla en nuestro teléfono:
+
 <img width="1062" height="698" alt="image" src="https://github.com/user-attachments/assets/93abdc9e-fa33-48e9-9b5a-5ff6ae2db756" />
 
+Dirección en donde debería de estar el APK:
+C:\Users\Tu_Usuario\AndroidStudioProjects\app2\app\build\outputs\apk\debug
 
 
