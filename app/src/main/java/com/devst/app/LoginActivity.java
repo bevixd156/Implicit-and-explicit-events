@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail, edtPass;
     private ImageView ivConfig;
     private Button btnLogin;
-    private View overlayView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
