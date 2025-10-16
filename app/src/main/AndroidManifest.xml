@@ -16,20 +16,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
+        <!-- Declaramos la actividad de ConfigActivity -->
         <activity
             android:name=".ConfigActivity"
             android:exported="true" />
+        <!-- Declaramos la actividad de GaleriaActivity -->
         <activity
             android:name=".GaleriaActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="unspecified" />
+        <!-- Declaramos la actividad de MapsActivity -->
         <activity
             android:name=".MapsActivity"
             android:exported="true" />
+        <!-- Declaramos la actividad de CamaraActivity -->
         <activity
             android:name=".CamaraActivity"
             android:exported="false" />
+        <!-- Declaramos la actividad de PerfilActivity -->
         <activity
             android:name=".PerfilActivity"
             android:exported="false" />

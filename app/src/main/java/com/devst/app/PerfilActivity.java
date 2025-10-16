@@ -53,7 +53,9 @@ public class PerfilActivity extends AppCompatActivity {
         tvPassword = findViewById(R.id.tvPassword);
         btnGuardarCambios = findViewById(R.id.btnGuardarCambios);
 
-        if(tvCorreo == null || tvPassword == null || edtNombre == null || btnGuardarCambios == null || imgPerfil == null){
+        //Comprobamos si algunos de los datos es null
+        if (tvCorreo == null || tvPassword == null || edtNombre == null || btnGuardarCambios == null || imgPerfil == null) {
+            //Si es null regresa un mensaje personalizado
             throw new RuntimeException("Error: revisa los IDs en tu XML. Algún view no existe.");
         }
 
@@ -95,7 +97,6 @@ public class PerfilActivity extends AppCompatActivity {
                 }
         );
 
-
         // Abre la galería al hacer clic
         imgPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -123,14 +124,14 @@ public class PerfilActivity extends AppCompatActivity {
             finish();
         });
     }
-    // Dentro de tu PerfilActivity.java
 
-    // Metodo guardarImagen para almacenarla aunque se cierre la aplicación
+    // Metodo Guardar Imagen para almacenarla aunque se cierre la aplicación
     private Uri guardarImagenInterna(Uri sourceUri) {
         try {
             InputStream in = getContentResolver().openInputStream(sourceUri);
             if (in == null) return null;
 
+            //Creamos una carpeta llamada perfil
             File dir = new File(getFilesDir(), "perfil");
             if (!dir.exists()) dir.mkdirs();
 
@@ -154,5 +155,4 @@ public class PerfilActivity extends AppCompatActivity {
             return null;
         }
     }
-
 }
