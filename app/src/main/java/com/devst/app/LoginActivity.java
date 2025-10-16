@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -48,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void intentoInicioSesion() {
         String email = edtEmail.getText() != null ? edtEmail.getText().toString().trim() : "";
         String pass  = edtPass.getText()  != null ? edtPass.getText().toString() : "";
@@ -76,17 +79,32 @@ public class LoginActivity extends AppCompatActivity {
         boolean ok = email.equals("estudiante@st.cl") && pass.equals("123456");
 
         if (ok) {
-            Toast.makeText(this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
-            // Ir al nuevo Activity
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            // 💠 Creamos la pantalla azul que cubrirá todo
+            View overlay = getLayoutInflater().inflate(R.layout.activity_transicion, null);
+            addContentView(overlay, new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT));
 
-            // Enviamos el email al Home
-            intent.putExtra("email_usuario", email);
-            startActivity(intent);
+            // Animación fade-in
+            overlay.animate()
+                    .alpha(1f)
+                    .setDuration(400)
+                    .withEndAction(() -> {
+                        // Cambiamos de pantalla
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        intent.putExtra("email_usuario", email);
+                        startActivity(intent);
 
-            finish();
+                        // Transición fade-out
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+                        finish();
+                    })
+                    .start();
         } else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
         }
     }
 }
+
+

@@ -12,6 +12,7 @@ import android.provider.CalendarContract;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -71,6 +72,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
+
+        View decor = getWindow().getDecorView();
+        decor.setAlpha(0f);
+        decor.animate().alpha(1f).setDuration(400).start();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
