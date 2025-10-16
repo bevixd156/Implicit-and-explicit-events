@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
     android:gravity="center"
     android:alpha="0">
 
-    <!-- Puedes poner un logo o texto si quieres -->
-
+    <!-- Poner una imagen centrada en el efecto Fade -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivLogoSantoTomas"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/aaaaa"
+        android:contentDescription="Logo Santo Tomás"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ImagenRedondeada" />
 </LinearLayout>
