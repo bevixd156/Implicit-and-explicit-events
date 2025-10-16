@@ -6,6 +6,10 @@
     <item
         android:id="@+id/action_web"
         android:title="Docs Android"/>
+    <!-- Agregamos el apartado de configuración -->
+    <item
+        android:id="@+id/action_config"
+        android:title="Configuración"/>
     <item
         android:id="@+id/action_salir"
         android:title="Salir"/>

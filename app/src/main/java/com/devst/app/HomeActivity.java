@@ -264,6 +264,10 @@ public class HomeActivity extends AppCompatActivity {
             // Abrir web (implícito)
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.android.com")));
             return true;
+        } else if (id == R.id.action_config) {
+            // Ir a configuracion (explicito)
+            startActivity(new Intent(this, ConfigActivity.class));
+            return true;
         } else if (id == R.id.action_salir) {
             finish(); // Cierra HomeActivity
             return true;
