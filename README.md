@@ -1,4 +1,4 @@
-Resumen Proyecto: Este proyecto esta orientado más al aprendizaje de como ocupar variables que harían de una aplicación en S.O. Android más intuitivo y presonalizable para el usuario y además de que sirve  de las clases y objetos de Java en Android.
+Resumen Proyecto: Este proyecto esta orientado más al aprendizaje de como ocupar variables que harían de una aplicación en S.O. Android más intuitivo y presonalizable para el usuario y además de que sirve para un mejor manejo de las clases y objetos de Java en Android.
 Versión de Android/AGP: API 31 Android 12.0 ("S") AGP: agp = "8.12.0"
 
 Intents Implicitos = 
