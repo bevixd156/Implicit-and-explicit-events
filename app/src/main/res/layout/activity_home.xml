@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_main1"
     tools:context=".HomeActivity">
 
     <!-- Barra superior con soporte para menú -->
@@ -27,7 +28,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
 
         <!-- Columna simple, centrada y con ancho máximo para que no se estire en tablets -->
         <LinearLayout
@@ -35,18 +37,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:gravity="center_horizontal"
-            android:background="@color/background_main1">
+            android:gravity="center"
+            android:padding="16dp">
 
             <!-- Contenedor para limitar el ancho en pantallas grandes -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:maxWidth="500dp">
 
                 <!-- Título -->
                 <TextView
@@ -54,9 +59,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bienvenido:"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_main1"/>
+                    android:textColor="@color/text_main1" />
 
                 <!-- Botones -->
                 <Button
