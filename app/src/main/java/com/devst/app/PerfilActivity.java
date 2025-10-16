@@ -125,7 +125,7 @@ public class PerfilActivity extends AppCompatActivity {
     }
     // Dentro de tu PerfilActivity.java
 
-    // Metodo
+    // Metodo guardarImagen para almacenarla aunque se cierre la aplicación
     private Uri guardarImagenInterna(Uri sourceUri) {
         try {
             InputStream in = getContentResolver().openInputStream(sourceUri);
