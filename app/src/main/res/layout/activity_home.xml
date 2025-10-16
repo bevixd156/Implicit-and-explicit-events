@@ -42,7 +42,7 @@
 
             <!-- Contenedor para limitar el ancho en pantallas grandes -->
             <LinearLayout
-                android:layout_width="350dp"
+                android:layout_width="390dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
