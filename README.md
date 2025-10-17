@@ -57,6 +57,6 @@ Y listo tendríamos nuestra APK lista para instalarla en nuestro teléfono 😎�
 <img width="1062" height="698" alt="image" src="https://github.com/user-attachments/assets/93abdc9e-fa33-48e9-9b5a-5ff6ae2db756" />
 
 Dirección en donde debería de estar el APK 😎😎:
-C:\Users\Tu_Usuario\AndroidStudioProjects\app2\app\build\outputs\apk\debug
+C:\Users\Tu_Usuario\carpeta_alojada\app2\app\build\outputs\apk\debug
 
 
