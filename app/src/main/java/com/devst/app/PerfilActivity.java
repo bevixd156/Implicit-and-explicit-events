@@ -128,29 +128,41 @@ public class PerfilActivity extends AppCompatActivity {
     // Metodo Guardar Imagen para almacenarla aunque se cierre la aplicación
     private Uri guardarImagenInterna(Uri sourceUri) {
         try {
+            // InputStream desde la Uri de la imagen seleccionada
             InputStream in = getContentResolver().openInputStream(sourceUri);
+            // Si no se puede abrir se retornará null
             if (in == null) return null;
 
             //Creamos una carpeta llamada perfil
             File dir = new File(getFilesDir(), "perfil");
+            //Si no está la carpeta la creamos
             if (!dir.exists()) dir.mkdirs();
 
-            String filename = "perfil.jpg"; // siempre sobreescribe
+            //Definimos el nombre del archivo interno
+            String filename = "perfil.jpg"; // siempre se sobreescribe de la imágen anterior
             File outFile = new File(dir, filename);
+
+            //OutputStream para escribir el contnt del archivo interno
             OutputStream out = new FileOutputStream(outFile);
 
+            //Copiamos los bytes del InputStream al OutputStream
             byte[] buffer = new byte[1024];
             int read;
+            //Mientras existan bytes qye leer
             while ((read = in.read(buffer)) != -1) {
+                //Se escribe en el archivo interno
                 out.write(buffer, 0, read);
             }
 
+            //Cerramos los streams para la liberación de recursos
             in.close();
             out.flush();
             out.close();
 
+            //Retornamos el Uti que apuntará al archivo guardado internamente
             return Uri.fromFile(outFile);
         } catch (Exception e) {
+            //Si en caso de error se imprime un trazo del error y nos devuelve null
             e.printStackTrace();
             return null;
         }
