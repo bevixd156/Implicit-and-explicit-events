@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        // Variables de activity_login.xml
         edtEmail = findViewById(R.id.edtEmail);
         edtPass  = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
@@ -47,8 +48,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
-
 
     private void intentoInicioSesion() {
         String email = edtEmail.getText() != null ? edtEmail.getText().toString().trim() : "";

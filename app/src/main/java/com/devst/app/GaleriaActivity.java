@@ -26,7 +26,7 @@ public class GaleriaActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imagenSeleccionada);
         Button btnSeleccionar = findViewById(R.id.btnSeleccionarImagen);
 
-        // Acción del botón: abrir galería
+        // Intent implícito -> seleccionar imagen directa de la galería
         btnSeleccionar.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.setType("image/*"); // Solo imágenes
